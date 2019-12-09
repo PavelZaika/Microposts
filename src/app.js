@@ -85,8 +85,6 @@ function deletePosts(e) {
 
 // Enable edit state
 function enableEdit(e) {
-  
-
   if (e.target.parentElement.classList.contains("edit")) {
     const id = e.target.parentElement.dataset.id;
     const title =
@@ -102,7 +100,6 @@ function enableEdit(e) {
 
     //fill the form with current post
     ui.fillForm(data);
-     
   }
 
   e.preventDefault();
