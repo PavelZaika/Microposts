@@ -1,16 +1,16 @@
 class UI {
-  constructor(){
-    this.post = document.querySelector('#posts');
-    this.titleInput = document.querySelector('#title');
-    this.bodyInput = document.querySelector('#body');
-    this.idInput = document.querySelector('#id');
-    this.postSubmit = document.querySelector('.post-submit');
-    this.forState = 'add';
+  constructor() {
+    this.post = document.querySelector("#posts");
+    this.titleInput = document.querySelector("#title");
+    this.bodyInput = document.querySelector("#body");
+    this.idInput = document.querySelector("#id");
+    this.postSubmit = document.querySelector(".post-submit");
+    this.forState = "add";
   }
 
   showPost(posts) {
-    let output = '';
-    posts.forEach((post) => {
+    let output = "";
+    posts.forEach(post => {
       output += `
       <div class="card mb-3 border-dark">
         <div class="card-body">
@@ -29,19 +29,19 @@ class UI {
     this.post.innerHTML = output;
   }
 
-  showAlert(message, className){
+  showAlert(message, className) {
     this.clearAlert();
 
     //Create div
-    const div = document.createElement('div');
+    const div = document.createElement("div");
     //Add classes
     div.className = className;
     //Add text
     div.appendChild(document.createTextNode(message));
     //Get parent
-    const container = document.querySelector('.postsContainer');
-    //Get posts 
-    const posts = document.querySelector('#posts');
+    const container = document.querySelector(".postsContainer");
+    //Get posts
+    const posts = document.querySelector("#posts");
     //Insert alert div
     container.insertBefore(div, posts);
 
@@ -51,17 +51,17 @@ class UI {
     }, 3000);
   }
 
-  clearAlert(){
-    const currentAlert = document.querySelector('.alert');
+  clearAlert() {
+    const currentAlert = document.querySelector(".alert");
 
-    if(currentAlert){
+    if (currentAlert) {
       currentAlert.remove();
     }
   }
 
-  clearField(){
-    this.titleInput.value = '';
-    this.bodyInput.value = '';
+  clearField() {
+    this.titleInput.value = "";
+    this.bodyInput.value = "";
   }
 }
 
